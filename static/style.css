@@ -1,0 +1,664 @@
+/* CSS styles for the article */
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Roboto+Mono:wght@300;700&display=swap');
+
+body {
+  background-color: #fdfaf4;
+  font-family: 'Playfair Display', serif;
+  color: #1b1b1b;
+  padding: 60px 30px;
+}
+
+.toc {
+  width: 180px;
+  font-family: 'Roboto Mono', monospace;
+  position: fixed;
+  top: 250px;
+  /* Hide TOC by default */
+  display: none; 
+  /* left: max(30px, calc(25vw - 330px)); */ /* Move left positioning into media query */
+  z-index: 1000; /* Add a high z-index to ensure TOC stays on top */
+}
+
+/* Media Query: Apply styles only when viewport width is 1300px or wider */
+@media (min-width: 1400px) {
+  .toc {
+    /* Show the TOC */
+    display: block; 
+    /* Apply the calculated left position */
+    left: max(30px, calc(25vw - 330px)); 
+  }
+}
+
+.toc h3 {
+  font-family: 'Playfair Display', serif;
+  font-size: 24px;
+  margin-top: 0;
+  margin-bottom: 10px;
+}
+
+.toc hr {
+  border: 0;
+  height: 1px;
+  background-color: #ccc;
+  margin-bottom: 15px;
+}
+
+.toc ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.toc li {
+  margin-bottom: 10px;
+}
+
+.toc a {
+  text-decoration: none;
+  color: #333;
+  font-size: 16px;
+}
+
+.toc a:hover {
+  color: #000;
+  text-decoration: underline;
+}
+
+.main-content {
+  max-width: 960px;
+  margin: 0 auto;
+}
+
+.hero-text {
+  font-size: 60px;
+  font-weight: 700;
+  letter-spacing: -1px;
+  line-height: 1.1;
+  margin-bottom: 10px;
+}
+
+.sub-hero-text {
+  font-size: 40px;
+  font-weight: 400;
+  margin-bottom: 50px;
+  line-height: 1.2;
+}
+
+/* New style for authors */
+.authors {
+  font-family: 'Roboto Mono', monospace; /* Use a monospace font like taglines */
+  font-size: 16px; /* Slightly smaller font size */
+  color: #333; /* Dark grey color */
+  line-height: 1.6; /* Adjust line spacing */
+  margin-top: -32.5px; /* Reduce space below subtitle */
+  margin-bottom: 17.5px; /* Add space below authors */
+  text-align: left; /* Ensure left alignment */
+}
+.authors span { /* Style for affiliation/notes */
+    display: block; /* Put affiliation/note on new line */
+    font-size: 14px;
+    color: #555;
+    margin-top: 0px;
+}
+/* Style for the affiliation specifically */
+.authors .affiliation {
+    /* Change from bold to a higher numeric weight */
+    /* font-weight: bold; */ 
+    /* Set font-weight to 700 (standard bold) */
+    font-weight: 600;  
+    font-size: 16px;   
+    color: #111;      
+}
+/* Style for links within the authors block */
+.authors a {
+    color: inherit; /* Inherit the color from the .authors class */
+    text-decoration: none; /* Remove default underline */
+}
+.authors a:hover {
+    text-decoration: underline; /* Add underline on hover */
+}
+/* End new style */
+
+.tagline {
+  font-family: 'Roboto Mono', monospace;
+  font-size: 24px;
+  background: #000;
+  color: #fff;
+  display: inline-block;
+  padding: 8px 16px;
+  margin: 40px 0;
+}
+
+img {
+  width: 100%;
+  /* Update border: set width (e.g., 4px), style (solid), color (#000) */
+  /* border: 0cm solid #000; */
+  border: 1.5px solid #000; 
+  /* Add border-radius for rounded corners */
+  border-radius: 15px; 
+  margin: 0px 20px; /* Keep global rule if needed elsewhere */
+  /* Ensure images behave correctly with border-box sizing */
+  box-sizing: border-box; 
+}
+
+/* Override for images directly within .main-content that need to align */
+.main-content > img {
+  margin-left: 0;
+  margin-right: 0;
+}
+
+/* General style for the specific image links */
+a#figure-1-img,
+a#figure-2-img,
+a#figure-3-img {
+  display: block; /* Ensures proper layout and application of margins */
+  text-decoration: none; /* Removes hyperlink underline */
+  cursor: default; /* Makes it not look like a clickable link */
+  /* margin-top is already set in their specific ID rules below */
+}
+
+/* Ensure images within these links take full width and are block */
+a#figure-1-img img,
+a#figure-2-img img,
+a#figure-3-img img {
+  display: block; /* Removes extra space below if image were inline */
+  width: 100%;    /* Makes image fill the link's width */
+  height: auto;   /* Maintains aspect ratio */
+  /* General img border styles will apply unless overridden below */
+}
+
+/* Style for Figure 1 (figs/2-min.png) link container */
+#figure-1-img {
+  margin-top: 20px; /* Consistent top margin */
+  margin-left: -25px; /* Override global img margin */
+  margin-right: 18px; /* Override global img margin */
+}
+
+/* Style for Figure 2 (figs/4.png) link container */
+#figure-2-img {
+  /* border: none; */ /* Remove border from the link itself */
+  border-radius: 0; /* Match the link's border-radius removal */
+  margin-left: -25px; /* Override global img margin */
+  margin-right: 17.5px; /* Override global img margin */
+  margin-top: 20px; /* Consistent top margin */
+}
+
+/* Specific border handling for image inside #figure-2-img link */
+a#figure-2-img img {
+  border: none; /* Ensure the image inside the borderless link is also borderless */
+  border-radius: 0; /* Match the link's border-radius removal */
+}
+
+/* Style for Figure 3 (figs/3.png) link container */
+#figure-3-img {
+  padding-left: 15px;
+  background-color: #fff;
+  margin-top: 20px;
+  /* The image inside will get the default border from global img styles */
+  border: 1.5px solid #000; /* Add border to the <a> tag */
+  border-radius: 15px;    /* Add border-radius to the <a> tag */
+  box-sizing: border-box; /* Ensure padding and border are within the element's width */
+  overflow: hidden; /* Clip child elements (the img) to the rounded corners */
+}
+
+/* Specific style for the image inside #figure-3-img link */
+a#figure-3-img img {
+  border: none; /* Remove border from the image itself */
+  border-radius: 0; /* Remove border-radius from the image */
+  margin: 0; /* Override global img margin to prevent interference with padding */
+}
+
+/* --- Updated Styles for Video Gallery --- */
+
+/* New outer wrapper for the whole section */
+.video-gallery-section {
+    margin-bottom: 40px; /* Space below the gallery section */
+    /* width: 100%; */ /* Was 100% of parent (.main-content) */
+    width: 100vw; /* Make the section span the full viewport width */
+    position: relative; /* Establishes a positioning context, good practice with calc for margins */
+    margin-left: calc((100% - 100vw) / 2); /* Calculates the negative margin to align left edge with viewport */
+    /* 100% here refers to the width of the containing block (.main-content) */
+    box-sizing: border-box; /* Ensures padding/border don't add to the 100vw width */
+}
+
+/* Container for the scrollable videos - now wider */
+.video-gallery-container {
+  /* Remove position: relative */
+  /* Remove padding: 0 45px */
+  box-sizing: border-box;
+  /* width: 100%; */ /* Remove this to use max-width */
+  max-width: 1150px; /* Set a maximum width for the gallery container */
+  margin-left: auto;   /* Center the container */
+  margin-right: auto;  /* Center the container */
+  overflow-x: auto; /* Enable horizontal scrolling */
+  scroll-behavior: smooth; /* Smooth scrolling effect */
+   /* Hide scrollbar */
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none;  /* IE and Edge */
+}
+.video-gallery-container::-webkit-scrollbar {
+  display: none; /* Chrome, Safari, Opera */
+}
+
+
+/* The actual scrolling div holding the videos */
+.video-gallery {
+  display: flex;
+  gap: 15px; /* Space between videos */
+  /* padding: 0 5vw; */ /* Original padding */
+  padding: 0 20px; /* Adjusted to fixed padding, or keep 5vw if preferred */
+  padding-bottom: 10px; /* Add some space at the bottom */
+  box-sizing: border-box;
+  width: max-content; /* Ensure it fits all videos horizontally */
+  margin: 0 auto; /* Center the flex container if it's narrower than the container (unlikely with max-content) */
+}
+
+
+.gallery-video {
+  flex: 0 0 auto; /* Prevent videos from shrinking/growing in the flex context */
+  /* width: 30vw; */ /* Remove fixed/relative width */
+  /* max-width: 450px; */ /* Remove max-width as width will be auto */
+  height: 220px;  /* Set a fixed height for all videos. Adjust this value as desired. */
+  width: auto;    /* Allow width to adjust to maintain original aspect ratio */
+  /* max-height: 253.125px; */ /* No longer needed if height is fixed */
+  /* object-fit: cover; */ /* Remove object-fit: cover to avoid cropping */
+  border-radius: 15px; /* Keep the rounded corners */
+  box-sizing: border-box;
+  background-color: #fdfaf4; /* Assuming you've reverted from the lime diagnostic */
+  /* Add a box-shadow for the glow/shadow effect */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+/* Styles for the navigation buttons */
+.gallery-nav {
+  /* ... existing button styles (background, color, border, radius, size, etc.) ... */
+  background-color: rgba(40, 40, 40, 0.8);
+  color: white;
+  border: none;
+  border-radius: 50%;
+  width: 35px;  /* Slightly smaller buttons */
+  height: 35px; /* Slightly smaller buttons */
+  font-size: 20px; /* Slightly smaller font */
+  font-weight: bold;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color 0.2s ease;
+  margin: 0 5px; /* Adjust margin between buttons */
+  flex-shrink: 0; /* Prevent buttons from shrinking */
+}
+.gallery-nav:hover {
+    background-color: rgba(0, 0, 0, 1);
+}
+
+/* Container for the navigation buttons - remove centering margin */
+.gallery-nav-controls {
+    /* max-width: 960px; */ /* No longer needed */
+    /* margin: 15px auto 0 auto; */ /* Remove auto margin */
+    display: flex; /* Keep as flex to layout buttons */
+    /* justify-content: center; */ /* No longer needed */
+    align-items: center;
+    margin-right: 15px; /* Add space between buttons and caption text */
+}
+
+
+/* Container to center the gallery caption and buttons */
+.gallery-caption-container {
+    max-width: 960px; /* Align container with main content */
+    margin: 15px auto 0 auto; /* Top margin, centered horizontally */
+    padding: 0 20px; /* Match original caption padding */
+    box-sizing: border-box;
+    display: flex; /* Make it a flex container */
+    align-items: flex-start; /* Align items to the top */
+    justify-content: center; /* Center content horizontally */
+}
+
+/* Specific style adjustments for the gallery caption text */
+.figure-caption.gallery-caption {
+    margin-bottom: 0;
+    margin-top: 0; /* Remove top margin, alignment handled by flex */
+    text-align: left; /* Align text to the left within its space */
+    flex-grow: 1; /* Allow text to take available space if needed */
+    /* Optional: Add a small left margin if needed */
+    /* margin-left: 10px; */
+}
+/* --- End Video Gallery Styles --- */
+
+/* --- Styles for Real-to-Sim Vertical Video Layout --- */
+.r2s-vertical-layout {
+  display: flex;
+  flex-direction: column;
+  gap: 10px; /* Space between the top and bottom rows */
+  margin-bottom: 5px;
+  /* padding: 0px 20px; */ /* REMOVE this horizontal padding */
+  box-sizing: border-box;
+}
+
+.r2s-video-row {
+  display: flex;
+  gap: 15px; /* Space between items in a row */
+  align-items: center; /* Vertically align items in the row */
+  justify-content: center; /* Center the group of items if they don't fill the width */
+}
+
+/* Styling for the "slots" - direct children of .r2s-video-row */
+/* These are the elements that will grow to fill the row. */
+.r2s-video-row > .r2s-video-item, /* Targets <video class="r2s-video-item"> directly in a row */
+.r2s-video-row > .stacked-ego-videos { /* Targets <div class="stacked-ego-videos"> directly in a row */
+  flex-grow: 1; /* Allow the slot to grow */
+  flex-basis: 0;  /* Good practice with flex-grow */
+  /* max-height: 240px; */ /* REMOVE max-height from general slot rule */
+
+  /* Make the slot a flex container to center its actual content (the video or the stack) */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  border: 1px solid #fdfaf4; /* Border for the slot */
+  box-sizing: border-box;
+  background-color: #fdfaf4; /* Background for the slot */
+}
+
+/* Set max-height for slots in the TOP row */
+.r2s-top-row > .r2s-video-item,
+.r2s-top-row > .stacked-ego-videos { /* Though top row doesn't have stacked videos, good for consistency */
+  max-height: 266px;
+}
+
+/* Set max-height for slots in the BOTTOM row */
+.r2s-bottom-row > .r2s-video-item,
+.r2s-bottom-row > .stacked-ego-videos {
+  max-height: 247px;
+}
+
+/* General styling for ALL <video> elements with class r2s-video-item */
+/* This applies to videos directly in a row AND those inside .stacked-ego-videos */
+video.r2s-video-item {
+  display: block; /* Behaves well for sizing */
+  max-width: 100%;  /* Video won't exceed the width of its parent container (slot or stacked-ego-videos div) */
+  max-height: 100%; /* Video won't exceed the height of its parent container */
+  width: auto;      /* Maintain aspect ratio */
+  height: auto;     /* Maintain aspect ratio */
+  object-fit: contain; /* Show entire video, letterbox if needed */
+  background-color: #fdfaf4; /* Black background for letterboxing */
+  border: none; /* Video itself has no border; the slot has one if applicable */
+}
+
+/* Apply a slight scale to SMPL and G1 videos to hide potential 1px edge artifacts */
+.r2s-video-smpl,
+.r2s-video-g1 {
+  transform: scale(1.001);
+}
+
+/* Styling for the container of stacked videos */
+.stacked-ego-videos {
+  /* This element is a flex item within .r2s-video-row (handled by the rule above) */
+  /* and also a flex container for its children. */
+  display: flex; /* This ensures it behaves as a flex container for its children */
+                 /* It might override display:flex from the slot rule if that rule also targeted this class directly,
+                    but the current slot rule uses the child selector '>' so it's fine. */
+  flex-direction: column;
+  gap: 5px;
+  
+  width: auto; /* Width determined by its 1:1 children */
+  height: 100%; /* Take full available height of its slot (which is max 180px) */
+  max-width: 100%; /* Ensure it doesn't overflow its slot if children are unexpectedly wide */
+  
+  /* Remove any slot-like styling if it was applied by a more general class,
+     as its appearance is defined by its children and its slot parent. */
+  border: none; /* The slot around .stacked-ego-videos has the border */
+  background-color: transparent; /* The slot around .stacked-ego-videos has the background */
+  /* max-height is effectively controlled by its parent slot */
+}
+
+/* Styling for videos INSIDE the .stacked-ego-videos container */
+.stacked-ego-videos > video.r2s-video-item {
+  /* These videos are already styled by 'video.r2s-video-item' for object-fit, background, etc. */
+  /* We just need to enforce their 1:1 aspect ratio and height calculation. */
+  aspect-ratio: 1 / 1;
+  width: auto; /* Width will be derived from height and 1:1 aspect ratio */
+  height: calc(50% - (5px / 2)); /* Each takes half the parent's height, minus half the gap */
+  min-height: 0;
+  /* max-width and max-height of 100% (from video.r2s-video-item) are fine here,
+     as they refer to 100% of this specific video's calculated 1:1 box. */
+}
+/* --- End Real-to-Sim Vertical Video Layout Styles --- */
+
+/* --- Styles for Real-to-Sim Captions --- */
+.r2s-caption-row {
+  display: flex;
+  gap: 15px; /* Should match the gap in .r2s-video-row */
+  justify-content: center; /* Should match justify-content in .r2s-video-row */
+  margin-top: -15px; /* Small space between videos and captions */
+}
+
+.r2s-caption-item {
+  flex-grow: 1; /* Allow caption item to grow, similar to video slots */
+  flex-basis: 0;
+  text-align: center; /* Center text within its slot */
+  font-size: 13px; /* Adjust as needed */
+  color: #555; /* Adjust as needed */
+  font-family: 'Roboto Mono', monospace;
+  /* Optional: to better align with video slots if they have borders/padding */
+  /* padding: 0 5px; */
+}
+/* --- End Styles for Real-to-Sim Captions --- */
+
+.section {
+  font-size: 20px;
+  line-height: 1.7;
+  margin-bottom: 40px;
+}
+
+.pull-quote {
+  font-size: 32px;
+  font-style: italic;
+  font-weight: 400;
+  margin: 60px 0 20px 0;
+  color: #333;
+}
+
+.footer {
+  font-size: 14px;
+  font-family: 'Roboto Mono', monospace;
+  color: #666;
+  margin-top: 80px;
+  border-top: 1px solid #ccc;
+  padding-top: 30px;
+  text-align: center;
+}
+
+/* New style for figure captions */
+.figure-caption {
+  font-family: 'Roboto Mono', monospace;
+  font-size: 14px;
+  color: #555;
+  text-align: center;
+  margin-top: 10px; /* Space above caption */
+  margin-bottom: 40px; /* Space below caption, before next element */
+  padding: 0 20px; /* Add some horizontal padding */
+}
+
+/* New styles for quick links */
+.quick-links {
+  text-align: center;
+  margin-top: -10px; /* Adjust to bring closer to caption if needed, or use a positive value for more space */
+  margin-bottom: 30px; /* Space before the next section (Abstract tagline) */
+}
+.quick-links a {
+  font-family: 'Roboto Mono', monospace;
+  font-size: 18px; /* Slightly larger than caption */
+  font-weight: bold;
+  /* color: #337ab7; */ /* Standard link blue, or choose your own */
+  color: #333; /* Change to dark grey */
+  text-decoration: none;
+  margin: 0 36px; /* Spacing between links */
+  padding: 5px 8px; /* Add some padding for a button-like feel if desired */
+  /* border: 1px solid transparent; */ /* Optional: for button look */
+  /* border-radius: 4px; */ /* Optional: for button look */
+}
+.quick-links a:hover,
+.quick-links a:focus {
+  text-decoration: underline;
+  /* color: #23527c; */ /* Darker blue on hover */
+  color: #000; /* Optional: Change to black or slightly darker grey on hover */
+  /* background-color: #f0f0f0; */ /* Optional: background for button look on hover */
+  /* border-color: #ccc; */ /* Optional: for button look on hover */
+}
+/* End new styles for quick links */
+
+/* Adding subsection styling in the table of contents */
+.toc-subsection {
+  margin-left: 20px; /* Indent subsections in TOC */
+  font-size: 0.95em; /* Make slightly smaller than main sections */
+}
+
+/* Style for section subtitles (subsection headers) */
+.section-subtitle {
+  font-family: 'Roboto Mono', monospace;
+  font-size: 20px;
+  background: #000;
+  color: #fff;
+  display: inline-block;
+  padding: 6px 14px;
+  margin: 30px 0;
+}
+
+/* Styling for individual videos within the gallery */
+.video-gallery .gallery-video {
+  /* width: auto; */ /* Let height dictate width for consistency */
+  height: 224px; /* Fixed height for all gallery videos */
+  margin-right: 0px; /* Spacing between videos */
+  flex-shrink: 0; /* Prevent videos from shrinking in the flex container */
+}
+
+/* Make videos in the Reconstruction Gallery taller */
+#reconstructionGallerySection .gallery-video {
+  height: 220px; /* Adjust this value as needed for desired taller height */
+}
+
+/* Styling for the caption and navigation controls container */
+.gallery-caption-container {
+  max-width: 960px; /* Align container with main content */
+  margin: 15px auto 0 auto; /* Top margin, centered horizontally */
+  padding: 0 20px; /* Match original caption padding */
+  box-sizing: border-box;
+  display: flex; /* Make it a flex container */
+  align-items: flex-start; /* Align items to the top */
+  justify-content: center; /* Center content horizontally */
+}
+
+/* --- BibTeX Styling --- */
+.bibtex-code {
+  background-color: rgba(80, 80, 80, 0.8); /* Match gallery arrow background */
+  color: #f1f1f1; /* Light text color for readability */
+  padding: 20px;
+  border-radius: 8px;
+  margin: 80px auto -40px; /* Spacing and centering, bottom margin reduced to 20px */
+  max-width: 1000px;  /* Max width of the BibTeX box */
+  box-sizing: border-box;
+  font-size: 14px; /* Base font size for BibTeX */
+}
+
+.bibtex-title {
+  font-family: 'Courier New', Courier, monospace; /* Same font family as code */
+  font-weight: bold;
+  font-size: 1.15em; /* Slightly larger than the code text */
+  margin-bottom: 10px; /* Space between title and pre block */
+  color: #f1f1f1; /* Ensure it matches the box text color */
+}
+
+.bibtex-code pre {
+  white-space: pre-wrap;       /* Allows text to wrap */
+  overflow-wrap: break-word;   /* Breaks long words if necessary (updated from word-wrap) */
+  margin: 0;                   /* Remove default margin from pre tag */
+}
+
+.bibtex-code code {
+  font-family: 'Courier New', Courier, monospace; /* Monospace font for code */
+  overflow-wrap: break-word; /* Ensure long words break to prevent overflow */
+  /* Color will be inherited from .bibtex-code */
+}
+
+
+
+/* 让 logo 和文字水平排列 */
+.hero-container {
+  display: flex;          /* 启用 Flexbox */
+  align-items: center;    /* 垂直居中 */
+  gap: 20px;              /* logo 和文字之间的间距 */
+}
+
+/* 调整 logo 大小 */
+.header-logo {
+  height: 60px;           /* 自定义高度 */
+  width: auto;            /* 保持原始比例 */
+}
+
+/* 调整 CLONE 文字的样式（可选） */
+.hero-text {
+  font-size: 3rem;        /* 调整字体大小 */
+  margin: 0;              /* 移除默认 margin */
+}
+
+
+.video-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  width: 100%;
+}
+
+.video-row {
+  display: flex;
+  gap: 20px;
+  width: 100%;
+}
+
+.video-wrapper {
+  flex: 1;
+  min-width: 0;
+  aspect-ratio: 16/9; /* Maintain video aspect ratio */
+}
+
+.gallery-video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+.video-placeholder {
+  visibility: hidden;
+}
+
+/* Existing Gallery Styles */
+.gallery-caption-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.gallery-caption {
+  max-width: 800px;
+  margin: 0 auto;
+  font-size: 16px;
+  line-height: 1.5;
+  color: #555;
+}
+
+/* 新增样式 - 使最后一行居中 */
+.last-row {
+  justify-content: center;
+}
+
+.centered-video {
+  flex: 0 1 auto; /* 不自动扩展，保持内容宽度 */
+  max-width: 50%; /* 限制最大宽度为50%，保持与其他行相同的视觉比例 */
+}
+
+/* --- End BibTeX Styling --- */
