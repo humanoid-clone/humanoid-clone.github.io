@@ -31,20 +31,28 @@
       </div> -->
       <div class="hero-text">CLONE:</div>
     </div>
-    <div class="sub-hero-text">Closed-Loop Humanoid Whole-Body Teleoperation for Long-Horizon Tasks</div>
+    <div class="sub-hero-text">Holistic Closed-Loop Humanoid Whole-Body Teleoperation for Long-Horizon Tasks</div>
     
 
     <!-- Add Authors -->
     <div class="authors">
-      <a href="https://yixxuan-li.github.io/" target="_blank">Yixuan Li</a><sup>1,4,*</sup>, <a href="https://pku.ai/author/yutang-lin/" target="_blank">Yutang Lin</a><sup>2,3,*</sup>, <a href="https://jiemingcui.github.io/" target="_blank">Jieming Cui</a><sup>2,4</sup>,
-      <a href="https://tengyu.ai/" target="_blank">Tengyu Liu</a><sup>4</sup>, <a href="https://liangwei-bit.github.io/web/" target="_blank">Wei Liang</a><sup>1</sup>, <a href="https://yzhu.io/" target="_blank">Yixin Zhu</a><sup>2,5</sup>, <a href="https://siyuanhuang.com/" target="_blank">Siyuan Huang</a><sup>4</sup>
+      <a href="https://yixxuan-li.github.io/" target="_blank">Yixuan Li</a><sup>*,1,2</sup>, 
+      <a href="https://pku.ai/author/yutang-lin/" target="_blank">Yutang Lin</a><sup>*,3,4</sup>, 
+      <a href="https://jiemingcui.github.io/" target="_blank">Jieming Cui</a><sup>2,3</sup>,
+      <a href="https://tengyu.ai/" target="_blank">Tengyu Liu</a><sup>2,6</sup>, 
+      <br>
+      <a href="https://liangwei-bit.github.io/web/" target="_blank">Wei Liang</a><sup>&dagger;,1</sup>, 
+      <a href="https://yzhu.io/" target="_blank">Yixin Zhu</a><sup>&dagger;,3,5</sup>, 
+      <a href="https://siyuanhuang.com/" target="_blank">Siyuan Huang</a><sup>&dagger;,2,6</sup>
       <!-- &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(*:equal contribution) -->
-      (*:equal contribution)
-      <span class="affiliation"><sup>1</sup>School of Computer Science & Technology, Beijing Institute of Technology</span>
-      <span class="affiliation"><sup>2</sup>Institute for Artificial Intelligence, Peking University</span>
-      <span class="affiliation"><sup>3</sup>Yuanpei College, Peking University</span>
-      <span class="affiliation"><sup>4</sup>Beijing Institute for General Artificial Intelligence(BIGAI)</span>
+      <br>
+      (*: equal contribution, &dagger;: corresponding author)
+      <span class="affiliation"><sup>1</sup>School of Computer Science and Technology, Beijing Institute of Technology</span>
+      <span class="affiliation"><sup>2</sup>Beijing Institute for General Artificial Intelligence (BIGAI)</span>
+      <span class="affiliation"><sup>3</sup>Institute for Artificial Intelligence, Peking University</span>
+      <span class="affiliation"><sup>4</sup>Yuanpei College, Peking University</span>
       <span class="affiliation"><sup>5</sup>Embodied Intelligence Lab, PKU-Wuhan Institute for Artificial Intelligence</span>
+      <span class="affiliation"><sup>6</sup>Joint Laboratory of Embodied AI and Humanoid Robots, BIGAI & UniTree Robotics</span>
     </div>
     <!-- End Authors -->
 
@@ -62,7 +70,7 @@
     <!-- Add Quick Links Here -->
     <div class="quick-links">
       <a href="https://github.com/yixxuan-li/CLONE/tree/main/resources/CLONE.pdf" target="_blank">[pdf]</a>
-      <a href="" target="_blank">[arxiv]</a>
+      <!-- <a href="" target="_blank">[arxiv(soon)]</a> -->
       <a href="https://yixxuan-li.github.io/CLONE/">[code(soon)]</a> 
       <!-- <a href="#gallery-section-anchor">[gallery]</a> -->
     </div>
@@ -82,14 +90,23 @@
       </ol>
       
       <p>In extensive experiments, CLONE demonstrates robust performance across diverse scenarios while maintaining stable whole-body control. These capabilities significantly advance humanoid robotics by enabling the collection of long-horizon interaction data and establishing a foundation for more sophisticated humanoid-environment interaction in both research and practical applications.</p> -->
-      <p>Existing teleoperation methods face two major challenges: (i) restricted controllability due to decoupled upper- and lower-body control, and (ii) significant global tracking drift resulting from open-loop execution, particularly in long-horizon tasks. These limitations hinder humanoid robots from executing synchronized whole-body motions necessary for long-horizon loco-manipulation tasks. </p>
+
+      <!-- <p>CLONE employs an MoE-based policy with <b>closed-loop error correction</b> for humanoid teleoperation,
+        enabling precise <b>whole-body coordination</b> and <b>long-horizon</b> task execution</p> -->
+
+        <!-- <p>CLONE employs an MoE-based policy with <b>closed-loop error correction</b> for holostic humanoid teleoperation,
+          enables previously unattainable capabilities  with existing systems such as <b>whole-body coordination</b> and <b>long-horizon</b> task execution, achieves whole-body coordination over long trajectories with minimal positional drift, complex coordinated movements like object retrieval from ground level, and robust performance across diverse operator configurations and environmental conditions. Using only minimal input from a commercial MR headset, CLONE achieves improved tracking precision over existing open-loop approaches, opening new possibilities for practical humanoid applications in unstructured environments.</p> -->
+
+        <p>CLONE employs an MoE-based policy with <b>closed-loop error correction</b> for holistic humanoid teleoperation, enabling capabilities previously unattainable with existing systems—such as <b>whole-body coordination</b> and <b>long-horizon</b> task execution. <br> Using only minimal input from a commercial MR headset, CLONE significantly improves tracking precision over existing open-loop approaches, opening new possibilities for practical humanoid deployment in unstructured environments.</p>
+          <!-- It achieves coordinated full-body motion over extended trajectories with minimal positional drift, supports complex actions like retrieving objects from ground level, and demonstrates robust performance across diverse operator configurations and environmental conditions.
+        Using only minimal input from a commercial MR headset, CLONE significantly improves tracking precision over existing open-loop approaches, opening new possibilities for practical humanoid deployment in unstructured environments.</p> -->
 
 
-      <p>In this paper, we introduce <b>CLONE</b>, a whole-body teleoperation system that overcomes these challenges!</p>
+
     </div>
 
 
-    <div class="tagline" id="how">How?</div>  
+    <!-- <div class="tagline" id="how">How?</div>  
 
     <div class="section">
       <p>
@@ -101,7 +118,7 @@
       <p>
         <b>Data Curation </b> -- A systematic data augmentation strategy that ensures robust performance under diverse, previously unseen operator poses.
       </p>
-    </div>
+    </div> -->
 
     <div class="tagline" id="deploy-in-real">Real-world Demo.</div>
 
@@ -134,16 +151,63 @@
                       Teleoperating the humanoid over a long horizon to evaluate the effectiveness of the closed-loop error correction mechanism while transitioning through different poses during walking.
                     </p> -->
             </div>
+            
 
             <div class="col" style="flex: 1; min-width: 300px; max-width: 100%;">
-              <h3 class="title is-5" style="text-align: center; margin-bottom: 10px; ">Upper-Body Motion Tracking</h3>
-              <video autoplay muted loop playsinline controls src="./resources/tracking/upperbody_tracking_1.MP4" width="100%"
+              <h3 class="title is-5" style="text-align: center; margin-bottom: 10px; ">Long-horizon Tracking in Outdoor Environments</h3>
+              <video autoplay muted loop playsinline controls src="./resources/tracking/outdoor_5.mp4" width="100%"
                      style="border-radius:10px; display: block;"></video>
                      <!-- <p style="text-align: center; margin-top: 8px; font-size: 0.9em; color: #666;">
                       Tracking the humanoid's upper body motion with hand poses.
                     </p> -->
             </div>
           </div>
+
+
+          <div class="row" style="display: flex; flex-wrap: wrap; justify-content: center; gap: 20px;">
+            <div class="col" style="flex: 1; min-width: 300px; max-width: 100%;">
+              <h3 class="title is-5" style="text-align: center; margin-bottom: 10px;">Long-horizon Tracking in Outdoor Environments
+              </h3>
+              <video autoplay muted loop playsinline controls src="./resources/tracking/outdoor_3.MP4" width="100%"
+                     style="border-radius:10px; display: block;"></video>
+                     <!-- <p style="text-align: center; margin-top: 8px; font-size: 0.9em; color: #666;">
+                      Teleoperating the humanoid over a long horizon to evaluate the effectiveness of the closed-loop error correction mechanism while transitioning through different poses during walking.
+                    </p> -->
+            </div>
+
+            <div class="col" style="flex: 1; min-width: 300px; max-width: 600px;">
+              <h3 class="title is-5" style="text-align: center; margin-bottom: 10px; ">Circular Walking</h3>
+              <video autoplay muted loop playsinline controls src="./resources/tracking/circling_1.MP4" width="100%"
+                     style="border-radius:10px; display: block;"></video>
+                     <!-- <p style="text-align: center; margin-top: 8px; font-size: 0.9em; color: #666;">
+                      Teleoperating the humanoid to circle walk.
+                    </p> -->
+            </div>
+          </div>
+
+
+          <!-- Row 3 -->
+          <div class="row" style="display: flex; flex-wrap: wrap; justify-content: center; gap: 20px;">
+            <div class="col" style="flex: 1; min-width: 300px; max-width: 100%;">
+              <h3 class="title is-5" style="text-align: center; margin-bottom: 10px; ">Robust and Accurate Global Position Tracking</h3>
+              <video autoplay muted loop playsinline controls src="./resources/tracking/outdoor_4.mp4" width="100%"
+                     style="border-radius:10px; display: block;"></video>
+                     <p style="text-align: center; margin-top: 8px; font-size: 0.9em; color: #666;">
+                      Outdoor tracking results show the closed-loop error correction adapts well to dynamic disturbances and changing conditions.
+                    </p>
+            </div>
+            
+            <div class="col" style="flex: 1; min-width: 300px; max-width: 100%;">
+              <h3 class="title is-5" style="text-align: center; margin-bottom: 10px; ">Robust and Accurate Global Position Tracking</h3>
+              <video autoplay muted loop playsinline controls src="./resources/tracking/robustness_1.mp4" width="100%"
+                     style="border-radius:10px; display: block;"></video>
+                     <!-- <p style="text-align: center; margin-top: 8px; font-size: 0.9em; color: #666;">
+                      Testing the humanoid robustness to global position tracking and dynamic disturbances.
+                    </p> -->
+            </div>
+          </div>
+
+
           
           <!-- Row 2 -->
           <div class="row" style="display: flex; flex-wrap: wrap; justify-content: center; gap: 20px;">
@@ -178,32 +242,16 @@
             </div>
             
             <div class="col" style="flex: 1; min-width: 300px; max-width: 100%;">
-              <h3 class="title is-5" style="text-align: center; margin-bottom: 10px; ">Robust and Accurate Global Position Tracking</h3>
-              <video autoplay muted loop playsinline controls src="./resources/tracking/robustness_1.mp4" width="100%"
+              <h3 class="title is-5" style="text-align: center; margin-bottom: 10px; ">Upper-Body Motion Tracking</h3>
+              <video autoplay muted loop playsinline controls src="./resources/tracking/upperbody_tracking_1.MP4" width="100%"
                      style="border-radius:10px; display: block;"></video>
                      <!-- <p style="text-align: center; margin-top: 8px; font-size: 0.9em; color: #666;">
-                      Testing the humanoid robustness to global position tracking and dynamic disturbances.
+                      Tracking the humanoid's upper body motion with hand poses.
                     </p> -->
             </div>
           </div>
-          
-          <!-- Row 4 -->
-          <div class="row" style="display: flex; flex-wrap: wrap; justify-content: center; gap: 20px;">
-            <div class="col" style="flex: 1; min-width: 300px; max-width: 600px;">
-              <h3 class="title is-5" style="text-align: center; margin-bottom: 10px; ">Circular Walking</h3>
-              <video autoplay muted loop playsinline controls src="./resources/tracking/circling_1.MP4" width="100%"
-                     style="border-radius:10px; display: block;"></video>
-                     <!-- <p style="text-align: center; margin-top: 8px; font-size: 0.9em; color: #666;">
-                      Teleoperating the humanoid to circle walk.
-                    </p> -->
-            </div>
-            
-            <!-- <div class="col" style="flex: 1; min-width: 300px; max-width: 100%;">
-              <h3 class="title is-5" style="text-align: center; margin-bottom: 10px; ">PlaceHolder</h3>
-              <video autoplay muted loop playsinline controls src="./resources/tracking/" width="100%"
-                     style="border-radius:10px; display: block;"></video>
-            </div> -->
-          </div>
+        
+
         </div>
       </div>
     </div>
@@ -245,6 +293,24 @@
                   </p>
           </div>
         </div>
+
+
+        <div class="video-gallery-container">
+          <div class="video-grid" id="videoGallerySitting">
+            <!-- Row 1 -->
+            <div class="row" style="display: flex; flex-wrap: wrap; justify-content: center; gap: 20px;">
+              <div class="col" style="flex: 1; min-width: 300px; max-width: 100%;">
+                <h3 class="title is-5" style="text-align: center; margin-bottom: 10px; ">Boxing</h3>
+                <video autoplay muted loop playsinline controls src="./resources/long-horizon/box_1.mp4" width="100%"
+                       style="border-radius:10px; display: block;"></video>
+              </div>
+              
+              <div class="col" style="flex: 1; min-width: 300px; max-width: 100%;">
+                <h3 class="title is-5" style="text-align: center; margin-bottom: 10px; ">Boxing</h3>
+                <video autoplay muted loop playsinline controls src="./resources/long-horizon/box_2.mp4" width="100%"
+                       style="border-radius:10px; display: block;"></video>
+              </div>
+            </div>
         
         <!-- Row 2 -->
 
@@ -448,6 +514,8 @@
     <div class="section" style="margin-top: -5px;">
       <p>
         We thank <a href="https://scholar.google.com/citations?view_op=list_works&hl=en&user=AZpX2sYAAAAJ" target="_blank">Le Ma</a> (BIGAI) and <a href="https://scholar.google.com/citations?user=p1JGJNwAAAAJ&hl=en" target="_blank">Peiyuan Zhi</a> (BIGAI) for their valuable assistance as teleoperators and for their advice on real-world deployment. We are also grateful to <a href="https://wikiahuang.github.io" target="_blank">Weiqi Huang</a>  (BIT) for support with motion capture and to <a href="https://gauleejx.github.io/" target="_blank">Jiaxin Li</a> (BIT) for insightful suggestions on LiDAR odometry.
+        <br>
+        We gratefully acknowledge Unitree Robotics for their support with hardware.
       </p>
     </div>
 
